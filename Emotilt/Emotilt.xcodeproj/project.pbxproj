@@ -11,6 +11,7 @@
 		B8CC8A2529A799810056739D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A2429A799810056739D /* ContentView.swift */; };
 		B8CC8A2729A799840056739D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CC8A2629A799840056739D /* Assets.xcassets */; };
 		B8CC8A2A29A799840056739D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8CC8A2929A799840056739D /* Preview Assets.xcassets */; };
+		B8CC8A3429A7CA0A0056739D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A3329A7CA090056739D /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		B8CC8A2429A799810056739D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B8CC8A2629A799840056739D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8CC8A2929A799840056739D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B8CC8A3329A7CA090056739D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				B8CC8A2229A799810056739D /* EmotiltApp.swift */,
 				B8CC8A2429A799810056739D /* ContentView.swift */,
+				B8CC8A3229A7C9F50056739D /* Models */,
 				B8CC8A2629A799840056739D /* Assets.xcassets */,
 				B8CC8A2829A799840056739D /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				B8CC8A2929A799840056739D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B8CC8A3229A7C9F50056739D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B8CC8A3329A7CA090056739D /* Message.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8CC8A2529A799810056739D /* ContentView.swift in Sources */,
+				B8CC8A3429A7CA0A0056739D /* Message.swift in Sources */,
 				B8CC8A2329A799810056739D /* EmotiltApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
