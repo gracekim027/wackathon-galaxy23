@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct EmotiltApp: App {
+    
+    init() {
+        // MARK: initialization
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(viewModel: .init())
         }
     }
 }
