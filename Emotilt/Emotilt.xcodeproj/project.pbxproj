@@ -16,6 +16,7 @@
 		B8CC8A3729A7CD190056739D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A3629A7CD190056739D /* RoundedButton.swift */; };
 		B8CC8A3A29A7CDDC0056739D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A3929A7CDDC0056739D /* HomeViewModel.swift */; };
 		B8CC8A3F29A86F4C0056739D /* EmojiSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A3E29A86F4C0056739D /* EmojiSheet.swift */; };
+		CEC9BACA29A8D02800B0FC98 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CEC9BAC929A8D02800B0FC98 /* ConfettiSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC9BACA29A8D02800B0FC98 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +126,9 @@
 			dependencies = (
 			);
 			name = Emotilt;
+			packageProductDependencies = (
+				CEC9BAC929A8D02800B0FC98 /* ConfettiSwiftUI */,
+			);
 			productName = Emotilt;
 			productReference = B8CC8A1F29A799810056739D /* Emotilt.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +157,9 @@
 				Base,
 			);
 			mainGroup = B8CC8A1629A799810056739D;
+			packageReferences = (
+				CEC9BAC829A8D02800B0FC98 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = B8CC8A2029A799810056739D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -387,6 +395,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEC9BAC829A8D02800B0FC98 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEC9BAC929A8D02800B0FC98 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEC9BAC829A8D02800B0FC98 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B8CC8A1729A799810056739D /* Project object */;
 }
