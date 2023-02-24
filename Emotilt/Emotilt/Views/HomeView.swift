@@ -7,15 +7,26 @@
 
 import SwiftUI
 import CoreMotion
+import ConfettiSwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewModel: ViewModel
     
-    
     let motionManager = CMMotionManager()
     @State private var sendTimer : Timer?
-    
     @State private var isReadyForSending: Bool = false
+    @State private var didSend : Bool = false
+    /*{
+        didSet{
+            if (didSend){
+                sendingSuccess += 1
+            }
+            tmpdidSend = didSend
+        }
+    }*/
+    
+    @State private var tmpdidSend : Bool = false
+    @State private var sendingSuccess : Int = 0
     @State private var isEmojiSheetOpen: Bool = false
     @State private var emoji: String = ""
     @State private var content: String = ""
@@ -34,9 +45,16 @@ struct HomeView: View {
             
             Spacer().frame(height: 24)
             
-            Text("\(counter)")
-                .font(.system(size: 40, weight: .bold))
-                            
+            if (isReadyForSending && !didSend){
+                //카운터 라벨 
+                Text("\(counter)")
+                    .font(.system(size: 40, weight: .bold))
+            }else if(didSend){
+                Text("보내기 성공!")
+                .font(.system(size: 20, weight: .bold))
+                .confettiCannon(counter: $sendingSuccess, openingAngle: .degrees(180), closingAngle: .degrees(360))
+            }
+            
             Spacer()
             
             Group {
@@ -99,30 +117,32 @@ extension HomeView {
         
         //이 부분을 장전 터치시 넣으면 됨.
         self.motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: {(motion, error) in
-            
             //여기 민감도 바꾸면 됨. 테스트해보니 0.3 ~ 0.4 적당 (0.3 이 더 예민)
             if ((motion?.acceleration.x)! > 0.4){
                 detected = true
-                //여기서 보내고 화면 밝기 올리고 레이블 초기화 하기
-                print("[Log] 모션 감지가 되어서 세션 종료")
+                //TODO: NSSession 에서 내용 보내기
+                print("[Log] 모션 감지가 되어 세션 종료")
+                didSend = true
             }
         })
         
+        //타이머 초기화
         if (self.counter == 0){
             self.counter = 5
         }
         
-        //여기서 timer 시작하거나 그러면 될듯
         self.sendTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ tempTimer in
-            //do something
+            
             if (self.counter > 0){
                 self.counter -= 1
             }
             
             if (self.counter == 0){
                 stopTimer()
+                didSend = true //애니메이션 테스트를 위해 넣음
+                
                 if (!detected){
-                    //여기서 종료됨 (화면 밝기 다시 올리고 레이블 초기화하기)
+                    //레이블 초기화
                     self.content  = ""
                     emoji = ""
                     isReadyForSending = false
