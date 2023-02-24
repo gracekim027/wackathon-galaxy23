@@ -15,7 +15,7 @@
 		B8CC8A3429A7CA0A0056739D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A3329A7CA090056739D /* Message.swift */; };
 		B8CC8A3729A7CD190056739D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A3629A7CD190056739D /* RoundedButton.swift */; };
 		B8CC8A3A29A7CDDC0056739D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A3929A7CDDC0056739D /* HomeViewModel.swift */; };
-		B8CC8A3C29A7D18D0056739D /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A3B29A7D18D0056739D /* EmojiTextField.swift */; };
+		B8CC8A3F29A86F4C0056739D /* EmojiSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CC8A3E29A86F4C0056739D /* EmojiSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		B8CC8A3329A7CA090056739D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B8CC8A3629A7CD190056739D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		B8CC8A3929A7CDDC0056739D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		B8CC8A3B29A7D18D0056739D /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
 		B8CC8A3D29A7E9370056739D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B8CC8A3E29A86F4C0056739D /* EmojiSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 				B8CC8A2429A799810056739D /* HomeView.swift */,
 				B8CC8A3029A7A8B20056739D /* MessagePopupView.swift */,
 				B8CC8A3629A7CD190056739D /* RoundedButton.swift */,
-				B8CC8A3B29A7D18D0056739D /* EmojiTextField.swift */,
+				B8CC8A3E29A86F4C0056739D /* EmojiSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,8 +178,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8CC8A3F29A86F4C0056739D /* EmojiSheet.swift in Sources */,
 				B8CC8A2529A799810056739D /* HomeView.swift in Sources */,
-				B8CC8A3C29A7D18D0056739D /* EmojiTextField.swift in Sources */,
 				B8CC8A3A29A7CDDC0056739D /* HomeViewModel.swift in Sources */,
 				B8CC8A3729A7CD190056739D /* RoundedButton.swift in Sources */,
 				B8CC8A3429A7CA0A0056739D /* Message.swift in Sources */,

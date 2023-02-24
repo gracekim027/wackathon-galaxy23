@@ -11,6 +11,7 @@ struct HomeView: View {
     @ObservedObject var viewModel: ViewModel
     
     @State private var isReadyForSending: Bool = false
+    @State private var isEmojiSheetOpen: Bool = false
     @State private var emoji: String = ""
     @State private var content: String = ""
 
@@ -28,8 +29,20 @@ struct HomeView: View {
             Spacer()
             
             Group {
-                EmojiTextField(placeholder: "!", text: $emoji)
-                    .fixedSize()
+                Button {
+                    isEmojiSheetOpen = true
+                } label: {
+                    ZStack {
+                        if emoji.isEmpty {
+                            RoundedRectangle(cornerRadius: 32)
+                                .fill(.tertiary.opacity(0.4))
+                                .frame(width: 168, height: 168)
+                        }
+                        
+                        Text(emoji)
+                            .font(.system(size: 168))
+                    }
+                }
                 
                 Spacer().frame(height: 24)
                 
@@ -52,6 +65,9 @@ struct HomeView: View {
             Spacer().frame(height: 16)
         }
         .padding(.horizontal, 36)
+        .sheet(isPresented: $isEmojiSheetOpen) {
+            EmojiSheet(selected: $emoji)
+        }
         .sheet(isPresented: $viewModel.didReceiveMessage) {
             // MessagePopupView(message: viewModel.receivedMessage)
         }
@@ -61,5 +77,6 @@ struct HomeView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(viewModel: .init())
+            .tint(.black)
     }
 }
